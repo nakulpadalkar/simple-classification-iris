@@ -20,7 +20,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -148,20 +167,26 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="literature-review">Literature Review</h2>
 <p>Existing research highlights the <strong>growing divide between AI-driven careers and traditional industries</strong>.</p>
 <ul>
-<li><strong>Smith &amp; Zhao (2023)</strong> analyzed AI-driven job displacement and found that <strong>30% of entry-level jobs</strong> in finance and marketing could be automated by 2026.<br>
+<li><span class="citation" data-cites="smith2023ai">Smith and Zhao (<a href="#ref-smith2023ai" role="doc-biblioref">(2023)</a>)</span> analyzed AI-driven job displacement and found that <strong>30% of entry-level jobs</strong> in finance and marketing could be automated by 2026.<br>
 </li>
-<li><strong>Johnson et al.&nbsp;(2024)</strong> reported that <strong>data scientists earn 40% more than traditional engineers</strong>, leading to a <strong>wage polarization effect</strong>.</li>
+<li><span class="citation" data-cites="johnson2024salaries">Johnson and Patel (<a href="#ref-johnson2024salaries" role="doc-biblioref">(2024)</a>)</span> reported that <strong>data scientists earn 40% more than traditional engineers</strong>, leading to a <strong>wage polarization effect</strong>.</li>
 </ul>
 </section>
 <section id="references" class="level2">
-<h2 class="anchored" data-anchor-id="references">References</h2>
-<p><strong>Smith, J., &amp; Zhao, L.</strong> (2023). The Impact of AI on Labor Markets. <em>Journal of Economic Perspectives, 37</em>(2), 112-135.<br>
-<strong>Johnson, E., &amp; Patel, R.</strong> (2024). Salary Trends in AI and Traditional Engineering. <em>Economics &amp; Statistics Review, 49</em>(1), 78-101.</p>
+
+
 
 
 </section>
 
-</main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-johnson2024salaries" class="csl-entry" role="listitem">
+<span class="smallcaps">Johnson, E., and R. Patel</span>. (2024): <span>“<a href="https://doi.org/10.1016/j.esr.2024.03.002">Salary trends in AI and traditional engineering</a>,”</span> <em>Economics &amp; Statistics Review</em>, 49, 78–101.
+</div>
+<div id="ref-smith2023ai" class="csl-entry" role="listitem">
+<span class="smallcaps">Smith, J., and L. Zhao</span>. (2023): <span>“<a href="https://doi.org/10.1257/jep.37.2.112">The impact of AI on labor markets</a>,”</span> <em>Journal of Economic Perspectives</em>, 37, 112–35.
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

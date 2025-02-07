@@ -18,14 +18,7 @@
     "href": "index.html#literature-review",
     "title": "Research Introduction: AI vs. Non-AI Careers",
     "section": "Literature Review",
-    "text": "Literature Review\nExisting research highlights the growing divide between AI-driven careers and traditional industries.\n\nSmith & Zhao (2023) analyzed AI-driven job displacement and found that 30% of entry-level jobs in finance and marketing could be automated by 2026.\n\nJohnson et al. (2024) reported that data scientists earn 40% more than traditional engineers, leading to a wage polarization effect."
-  },
-  {
-    "objectID": "index.html#references",
-    "href": "index.html#references",
-    "title": "Research Introduction: AI vs. Non-AI Careers",
-    "section": "References",
-    "text": "References\nSmith, J., & Zhao, L. (2023). The Impact of AI on Labor Markets. Journal of Economic Perspectives, 37(2), 112-135.\nJohnson, E., & Patel, R. (2024). Salary Trends in AI and Traditional Engineering. Economics & Statistics Review, 49(1), 78-101."
+    "text": "Literature Review\nExisting research highlights the growing divide between AI-driven careers and traditional industries.\n\nSmith and Zhao ((2023)) analyzed AI-driven job displacement and found that 30% of entry-level jobs in finance and marketing could be automated by 2026.\n\nJohnson and Patel ((2024)) reported that data scientists earn 40% more than traditional engineers, leading to a wage polarization effect."
   },
   {
     "objectID": "about.html",

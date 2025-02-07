@@ -1,0 +1,44 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Research Introduction: AI vs. Non-AI Careers",
+    "section": "",
+    "text": "The rise of artificial intelligence (AI) is transforming job markets globally. While AI-related jobs are in high demand, concerns about job displacement in traditional sectors (e.g., mechanical engineering, retail, farming) continue to grow. This research aims to analyze the impact of AI on job security, salary trends, and employment growth in AI-driven vs. non-AI industries."
+  },
+  {
+    "objectID": "index.html#introduction",
+    "href": "index.html#introduction",
+    "title": "Research Introduction: AI vs. Non-AI Careers",
+    "section": "",
+    "text": "The rise of artificial intelligence (AI) is transforming job markets globally. While AI-related jobs are in high demand, concerns about job displacement in traditional sectors (e.g., mechanical engineering, retail, farming) continue to grow. This research aims to analyze the impact of AI on job security, salary trends, and employment growth in AI-driven vs. non-AI industries."
+  },
+  {
+    "objectID": "index.html#literature-review",
+    "href": "index.html#literature-review",
+    "title": "Research Introduction: AI vs. Non-AI Careers",
+    "section": "Literature Review",
+    "text": "Literature Review\nExisting research highlights the growing divide between AI-driven careers and traditional industries.\n\nSmith & Zhao (2023) analyzed AI-driven job displacement and found that 30% of entry-level jobs in finance and marketing could be automated by 2026.\n\nJohnson et al. (2024) reported that data scientists earn 40% more than traditional engineers, leading to a wage polarization effect."
+  },
+  {
+    "objectID": "index.html#references",
+    "href": "index.html#references",
+    "title": "Research Introduction: AI vs. Non-AI Careers",
+    "section": "References",
+    "text": "References\nSmith, J., & Zhao, L. (2023). The Impact of AI on Labor Markets. Journal of Economic Perspectives, 37(2), 112-135.\nJohnson, E., & Patel, R. (2024). Salary Trends in AI and Traditional Engineering. Economics & Statistics Review, 49(1), 78-101."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  },
+  {
+    "objectID": "simple-classification.html",
+    "href": "simple-classification.html",
+    "title": "",
+    "section": "",
+    "text": "# Import iris from sklearn\n\nfrom sklearn import datasets\nimport numpy as np\n\n# Load the iris dataset\niris = datasets.load_iris()\niris_data = iris.data\niris_target = iris.target\n\n\n\n# create dataframe\nimport pandas as pd\niris_df = pd.DataFrame(data=iris_data, columns=iris.feature_names) \niris_df.head()\n\n\n\n\n\n\n\n\nsepal length (cm)\nsepal width (cm)\npetal length (cm)\npetal width (cm)\n\n\n\n\n0\n5.1\n3.5\n1.4\n0.2\n\n\n1\n4.9\n3.0\n1.4\n0.2\n\n\n2\n4.7\n3.2\n1.3\n0.2\n\n\n3\n4.6\n3.1\n1.5\n0.2\n\n\n4\n5.0\n3.6\n1.4\n0.2"
+  }
+]

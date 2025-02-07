@@ -1,5 +1,7 @@
 ---
 title: "Research Introduction: AI vs. Non-AI Careers"
+bibliography: references.bib
+csl: econometrica.csl
 ---
 
 ## Introduction  
@@ -9,9 +11,9 @@ The rise of **artificial intelligence (AI)** is transforming job markets globall
 ## Literature Review  
 Existing research highlights the **growing divide between AI-driven careers and traditional industries**.
 
-- **Smith & Zhao (2023)** analyzed AI-driven job displacement and found that **30% of entry-level jobs** in finance and marketing could be automated by 2026.  
-- **Johnson et al. (2024)** reported that **data scientists earn 40% more than traditional engineers**, leading to a **wage polarization effect**.  
+- @smith2023ai analyzed AI-driven job displacement and found that **30% of entry-level jobs** in finance and marketing could be automated by 2026.  
+- @johnson2024salaries reported that **data scientists earn 40% more than traditional engineers**, leading to a **wage polarization effect**.  
+
 
 ## References  
-**Smith, J., & Zhao, L.** (2023). The Impact of AI on Labor Markets. *Journal of Economic Perspectives, 37*(2), 112-135.  
-**Johnson, E., & Patel, R.** (2024). Salary Trends in AI and Traditional Engineering. *Economics & Statistics Review, 49*(1), 78-101.  
+

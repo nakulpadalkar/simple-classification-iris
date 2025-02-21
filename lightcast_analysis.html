@@ -57,7 +57,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -100,6 +100,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
 <link rel="stylesheet" href="styles.css">
@@ -150,18 +153,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<div id="cell-0" class="cell" data-execution_count="10">
+<div id="cell-0" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>lightcast <span class="op">=</span> pd.read_csv(<span class="st">'lightcast_job_postings_small.csv'</span>)</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>lightcast.shape</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="10">
+<div class="cell-output cell-output-display" data-execution_count="9">
 <pre><code>(100, 131)</code></pre>
 </div>
 </div>
-<div id="cell-1" class="cell" data-execution_count="11">
+<div id="cell-1" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>lightcast.columns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="11">
+<div class="cell-output cell-output-display" data-execution_count="10">
 <pre><code>Index(['ID', 'LAST_UPDATED_DATE', 'LAST_UPDATED_TIMESTAMP', 'DUPLICATES',
        'POSTED', 'EXPIRED', 'DURATION', 'SOURCE_TYPES', 'SOURCES', 'URL',
        ...
@@ -172,11 +175,277 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       dtype='object', length=131)</code></pre>
 </div>
 </div>
-<div id="cell-2" class="cell" data-execution_count="12">
+<div id="cell-2" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># n=100</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># lightcast_small = lightcast.head(n=n)</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># lightcast_small.shape</span></span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># lightcast_small.to_csv('lightcast_job_postings_small.csv', index=False)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="cell-3" class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Drop URL and ACtive URL Columns</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>lightcast.drop(columns<span class="op">=</span>[<span class="st">'URL'</span>, <span class="st">'ACTIVE_URLS'</span>, <span class="st">'SOURCE_TYPES'</span>, <span class="st">"SOURCES"</span>, <span class="st">"NAICS_2022_2"</span>,<span class="st">"NAICS_2022_2_NAME"</span>], axis<span class="op">=</span><span class="dv">1</span>, inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>lightcast.shape</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="12">
+<pre><code>(100, 125)</code></pre>
+</div>
+</div>
+<div id="cell-4" class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>lightcast.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="13">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">ID</th>
+<th data-quarto-table-cell-role="th">LAST_UPDATED_DATE</th>
+<th data-quarto-table-cell-role="th">LAST_UPDATED_TIMESTAMP</th>
+<th data-quarto-table-cell-role="th">DUPLICATES</th>
+<th data-quarto-table-cell-role="th">POSTED</th>
+<th data-quarto-table-cell-role="th">EXPIRED</th>
+<th data-quarto-table-cell-role="th">DURATION</th>
+<th data-quarto-table-cell-role="th">ACTIVE_SOURCES_INFO</th>
+<th data-quarto-table-cell-role="th">TITLE_RAW</th>
+<th data-quarto-table-cell-role="th">BODY</th>
+<th data-quarto-table-cell-role="th">...</th>
+<th data-quarto-table-cell-role="th">LIGHTCAST_SECTORS</th>
+<th data-quarto-table-cell-role="th">LIGHTCAST_SECTORS_NAME</th>
+<th data-quarto-table-cell-role="th">NAICS_2022_3</th>
+<th data-quarto-table-cell-role="th">NAICS_2022_3_NAME</th>
+<th data-quarto-table-cell-role="th">NAICS_2022_4</th>
+<th data-quarto-table-cell-role="th">NAICS_2022_4_NAME</th>
+<th data-quarto-table-cell-role="th">NAICS_2022_5</th>
+<th data-quarto-table-cell-role="th">NAICS_2022_5_NAME</th>
+<th data-quarto-table-cell-role="th">NAICS_2022_6</th>
+<th data-quarto-table-cell-role="th">NAICS_2022_6_NAME</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>1f57d95acf4dc67ed2819eb12f049f6a5c11782c</td>
+<td>2024-09-06</td>
+<td>2024-09-06 20:32:57.352 Z</td>
+<td>0</td>
+<td>2024-06-02</td>
+<td>2024-06-08</td>
+<td>6.0</td>
+<td>NaN</td>
+<td>Enterprise Analyst (II-III)</td>
+<td>31-May-2024\n\nEnterprise Analyst (II-III)\n\n...</td>
+<td>...</td>
+<td>[\n 7\n]</td>
+<td>[\n "Artificial Intelligence"\n]</td>
+<td>441</td>
+<td>Motor Vehicle and Parts Dealers</td>
+<td>4413</td>
+<td>Automotive Parts, Accessories, and Tire Retailers</td>
+<td>44133</td>
+<td>Automotive Parts and Accessories Retailers</td>
+<td>441330</td>
+<td>Automotive Parts and Accessories Retailers</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>0cb072af26757b6c4ea9464472a50a443af681ac</td>
+<td>2024-08-02</td>
+<td>2024-08-02 17:08:58.838 Z</td>
+<td>0</td>
+<td>2024-06-02</td>
+<td>2024-08-01</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>Oracle Consultant - Reports (3592)</td>
+<td>Oracle Consultant - Reports (3592)\n\nat SMX i...</td>
+<td>...</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>561</td>
+<td>Administrative and Support Services</td>
+<td>5613</td>
+<td>Employment Services</td>
+<td>56132</td>
+<td>Temporary Help Services</td>
+<td>561320</td>
+<td>Temporary Help Services</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>85318b12b3331fa490d32ad014379df01855c557</td>
+<td>2024-09-06</td>
+<td>2024-09-06 20:32:57.352 Z</td>
+<td>1</td>
+<td>2024-06-02</td>
+<td>2024-07-07</td>
+<td>35.0</td>
+<td>NaN</td>
+<td>Data Analyst</td>
+<td>Taking care of people is at the heart of every...</td>
+<td>...</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>524</td>
+<td>Insurance Carriers and Related Activities</td>
+<td>5242</td>
+<td>Agencies, Brokerages, and Other Insurance Rela...</td>
+<td>52429</td>
+<td>Other Insurance Related Activities</td>
+<td>524291</td>
+<td>Claims Adjusting</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>1b5c3941e54a1889ef4f8ae55b401a550708a310</td>
+<td>2024-09-06</td>
+<td>2024-09-06 20:32:57.352 Z</td>
+<td>1</td>
+<td>2024-06-02</td>
+<td>2024-07-20</td>
+<td>48.0</td>
+<td>NaN</td>
+<td>Sr. Lead Data Mgmt. Analyst - SAS Product Owner</td>
+<td>About this role:\n\nWells Fargo is looking for...</td>
+<td>...</td>
+<td>[\n 6\n]</td>
+<td>[\n "Data Privacy/Protection"\n]</td>
+<td>522</td>
+<td>Credit Intermediation and Related Activities</td>
+<td>5221</td>
+<td>Depository Credit Intermediation</td>
+<td>52211</td>
+<td>Commercial Banking</td>
+<td>522110</td>
+<td>Commercial Banking</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>cb5ca25f02bdf25c13edfede7931508bfd9e858f</td>
+<td>2024-06-19</td>
+<td>2024-06-19 07:00:00.000 Z</td>
+<td>0</td>
+<td>2024-06-02</td>
+<td>2024-06-17</td>
+<td>15.0</td>
+<td>NaN</td>
+<td>Comisiones de $1000 - $3000 por semana... Comi...</td>
+<td>Comisiones de $1000 - $3000 por semana... Comi...</td>
+<td>...</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>999</td>
+<td>Unclassified Industry</td>
+<td>9999</td>
+<td>Unclassified Industry</td>
+<td>99999</td>
+<td>Unclassified Industry</td>
+<td>999999</td>
+<td>Unclassified Industry</td>
+</tr>
+</tbody>
+</table>
+
+<p>5 rows × 125 columns</p>
+</div>
+</div>
+</div>
+<div id="cell-5" class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>lightcast_clean <span class="op">=</span> lightcast[[<span class="st">"ID"</span>,<span class="st">"TITLE_RAW"</span>, <span class="st">"BODY"</span>,<span class="st">"COMPANY_NAME"</span>,<span class="st">"COMPANY_RAW"</span>,<span class="st">"LAST_UPDATED_TIMESTAMP"</span>,    <span class="st">"DUPLICATES"</span>,   <span class="st">"POSTED"</span>,   <span class="st">"EXPIRED"</span>]]</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>lightcast_clean.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="14">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">ID</th>
+<th data-quarto-table-cell-role="th">TITLE_RAW</th>
+<th data-quarto-table-cell-role="th">BODY</th>
+<th data-quarto-table-cell-role="th">COMPANY_NAME</th>
+<th data-quarto-table-cell-role="th">COMPANY_RAW</th>
+<th data-quarto-table-cell-role="th">LAST_UPDATED_TIMESTAMP</th>
+<th data-quarto-table-cell-role="th">DUPLICATES</th>
+<th data-quarto-table-cell-role="th">POSTED</th>
+<th data-quarto-table-cell-role="th">EXPIRED</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>1f57d95acf4dc67ed2819eb12f049f6a5c11782c</td>
+<td>Enterprise Analyst (II-III)</td>
+<td>31-May-2024\n\nEnterprise Analyst (II-III)\n\n...</td>
+<td>Murphy USA</td>
+<td>Murphy USA</td>
+<td>2024-09-06 20:32:57.352 Z</td>
+<td>0</td>
+<td>2024-06-02</td>
+<td>2024-06-08</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>0cb072af26757b6c4ea9464472a50a443af681ac</td>
+<td>Oracle Consultant - Reports (3592)</td>
+<td>Oracle Consultant - Reports (3592)\n\nat SMX i...</td>
+<td>Smx Corporation Limited</td>
+<td>SMX</td>
+<td>2024-08-02 17:08:58.838 Z</td>
+<td>0</td>
+<td>2024-06-02</td>
+<td>2024-08-01</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>85318b12b3331fa490d32ad014379df01855c557</td>
+<td>Data Analyst</td>
+<td>Taking care of people is at the heart of every...</td>
+<td>Sedgwick</td>
+<td>Sedgwick</td>
+<td>2024-09-06 20:32:57.352 Z</td>
+<td>1</td>
+<td>2024-06-02</td>
+<td>2024-07-07</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>1b5c3941e54a1889ef4f8ae55b401a550708a310</td>
+<td>Sr. Lead Data Mgmt. Analyst - SAS Product Owner</td>
+<td>About this role:\n\nWells Fargo is looking for...</td>
+<td>Wells Fargo</td>
+<td>Wells Fargo</td>
+<td>2024-09-06 20:32:57.352 Z</td>
+<td>1</td>
+<td>2024-06-02</td>
+<td>2024-07-20</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>cb5ca25f02bdf25c13edfede7931508bfd9e858f</td>
+<td>Comisiones de $1000 - $3000 por semana... Comi...</td>
+<td>Comisiones de $1000 - $3000 por semana... Comi...</td>
+<td>Unclassified</td>
+<td>LH/GM</td>
+<td>2024-06-19 07:00:00.000 Z</td>
+<td>0</td>
+<td>2024-06-02</td>
+<td>2024-06-17</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div id="cell-6" class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>lightcast_clean <span class="op">=</span> lightcast_clean[lightcast_clean.DUPLICATES <span class="op">!=</span> <span class="dv">1</span>]</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>lightcast_clean.shape</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="15">
+<pre><code>(83, 9)</code></pre>
+</div>
 </div>
 
 

@@ -12,7 +12,14 @@ The rise of **artificial intelligence (AI)** is transforming job markets globall
 Existing research highlights the **growing divide between AI-driven careers and traditional industries**.
 
 - @smith2023ai analyzed AI-driven job displacement and found that **30% of entry-level jobs** in finance and marketing could be automated by 2026.  
-- @johnson2024salaries reported that **data scientists earn 40% more than traditional engineers**, leading to a **wage polarization effect**.  
+- @johnson2024salaries reported that **data scientists earn 40% more than traditional engineers**, leading to a **wage polarization effect**.
+
+## Analysis Plan
+This research will use **regression analysis** to compare **job security, salary trends, and employment growth** in AI-driven vs. non-AI industries. The analysis will be based on data from the **Bureau of Labor Statistics** and **LinkedIn**.
+
+## Exploratory Data Analysis
+
+
 
 
 ## References  

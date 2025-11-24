@@ -8,6 +8,8 @@ website:
       - href: index.qmd
         text: Home
       - about.qmd
+      - href: Analysis.ipynb
+        text: Analysis
 
 format:
   html:

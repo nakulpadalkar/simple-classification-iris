@@ -1,0 +1,12 @@
+{
+  "hash": "7c41c98d4a65a14c264a35d79fd89b37",
+  "result": {
+    "engine": "jupyter",
+    "markdown": "---\ntitle: \"FRED API Analysis\"\n\n---\n\n::: {#a5e26202 .cell execution_count=1}\n``` {.python .cell-code}\nimport os\nfrom dotenv import load_dotenv, dotenv_values\nimport psycopg2\nimport polars as pl\nimport plotly.graph_objects as go\nimport plotly.io as pio\npio.renderers.default = 'notebook'  # Use 'notebook', 'browser', or 'colab' if necessary\nfrom datetime import datetime, date, time, timedelta\n\n\nload_dotenv()\n\nconfig = dotenv_values(\".env\")\n\nprint(\"Config loaded:\", config.keys())\n```\n\n::: {.cell-output .cell-output-stdout}\n```\nConfig loaded: odict_keys(['FRED_API_KEY'])\n```\n:::\n:::\n\n\n## FRED API Data Retrieval and Analysis\n\nimport requests\n\n",
+    "supporting": [
+      "fred_api_analysis_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}
